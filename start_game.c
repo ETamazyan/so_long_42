@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   start_game.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etamazya <etamazya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etamazya <etamazya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 12:43:13 by etamazya          #+#    #+#             */
-/*   Updated: 2024/07/16 12:10:06 by etamazya         ###   ########.fr       */
+/*   Updated: 2025/06/09 12:05:05 by etamazya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	press_key(int key, t_game *game)
 {
+	// printf("Key pressed: %d\n", key);
 	if (key == ESC)
 		exit_game(game, -1);
 	else if (key == W || key == UP)
@@ -41,9 +42,15 @@ void	run_game(t_map *map)
 	game.steps = 0;
 	game.anim = anim_coin(&game);
 	init_map(&game, game.anim);
-	mlx_hook(game.img.win, 2, 0, press_key, &game);
+	// Linux
+	mlx_hook(game.img.win, 2, 1L << 0, press_key, &game);
+	// MacOS
+	// mlx_hook(game.img.win, 2, 0, press_key, &game);
 	mlx_loop_hook(game.img.mlx, &frame, &game);
-	mlx_hook(game.img.win, 17, 0, &press_exit, &game);
+	// Linux
+	mlx_hook(game.img.win, 17, 0L, press_exit, &game);
+	// MacOS
+	// mlx_hook(game.img.win, 17, 0, &press_exit, &game);
 	mlx_loop(game.img.mlx);
 }
 // make null plr | l_plr | c_exit | o_exit

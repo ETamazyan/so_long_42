@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etamazya <etamazya@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etamazya <etamazya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 10:10:22 by etamazya          #+#    #+#             */
-/*   Updated: 2024/07/09 17:22:49 by etamazya         ###   ########.fr       */
+/*   Updated: 2025/06/09 13:00:09 by etamazya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,37 @@
 # define SO_LONG_H
 
 # include <stdio.h>
-# include <mlx.h>
+# include "./mlx/mlx.h"
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
 # include "get_next_line.h"
 
+
 # define SIZE 60
+
+#ifdef __linux__
+# define W 119
+# define A 97
+# define S 115
+# define D 100
+# define LEFT 65361
+# define RIGHT 65363
+# define UP 65362
+# define DOWN 65364
+# define ESC 65307
+#else
 # define ESC 53
 # define W 13
 # define A 0
 # define S 1
 # define D 2
-# define UP 126
-# define DOWN 125
 # define LEFT 123
 # define RIGHT 124
+# define UP 126
+# define DOWN 125
+#endif
+
 
 typedef struct s_img
 {

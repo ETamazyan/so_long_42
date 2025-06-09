@@ -126,6 +126,7 @@ static char *result[] = {
 "q. c #D3B9A2",
 "w. c #D9BCA6",
 "e. c None",
+/* "e. c #6fa072" change this for linux just bg will not be black n Linux*/
 /* pixels */
 "e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.n n e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.",
 "e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.u N n C e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.e.",
